@@ -15,6 +15,7 @@ export class PaginationController {
         this.paginate();
     }
 
+
     nextPage() {
         let nextPage = this.currentPage + 1;
 
@@ -42,6 +43,8 @@ export class PaginationController {
             this.currentPage, this.lastPage, this.data);
     }
 }
+
+
 
 export const PaginationComponent = {
   templateUrl: '/components/app/views/pagination.html',

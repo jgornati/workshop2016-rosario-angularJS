@@ -20,6 +20,7 @@ export class CommentsController {
     }
 }
 
+
 export const CommentsComponent = {
     templateUrl: '/components/app/views/comments.html',
     controller: CommentsController,
