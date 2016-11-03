@@ -76,8 +76,6 @@ Estructura de rutas
 
 
 ```
-
-
     .when('/path/:pathParameter/', {
                 templateUrl: '/components/app/views/template.html',
                 resolve: {
@@ -85,9 +83,7 @@ Estructura de rutas
                       ApiService.getSomething($route.current.params.pathParameter)
                 },
             })
-        
 ```
-
 
 Luego en nuestro template podremos acceder a la data conseguida del server de la siguiente forma:
 
