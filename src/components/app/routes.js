@@ -11,23 +11,18 @@ export function routes($routeProvider, $locationProvider) {
         .otherwise('/')
         .when('/', {
             templateUrl: '/components/app/views/index.html',
-<<<<<<< HEAD
-        resolve: {
-               data: ($route, ApiService) =>//Implement API call to get bands
-                ApiService.getBands(),
-             },
-=======
             resolve: {
                 data: ($route, ApiService) =>
                   ApiService.getBands(),
             },
->>>>>>> b138c00268b9b809b55e5e623eeccdc56231af70
         })
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-              artists: ($route, ApiService) =>
-                  ApiService.getBand($route.current.params.bandId),
+                artists: ($route, ApiService) =>
+                  ApiService.getArtists($route.current.params.bandId),
+                albums: ($route, ApiService) =>
+                  ApiService.getAlbums($route.current.params.bandId),
               // albums: //Implement API call to get albums
             },
         })

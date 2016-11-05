@@ -11,17 +11,25 @@ export class ApiService {
     }
 
     getBand(bandId){
-        return this.http.get(`${this.url}/bands/${this.bandId}`)
+        return this.http.get(`${this.url}/bands/${bandId}`)
             .then(response => response.data);
     }
 
-    // getArtists(bandId)
+    getArtists(bandId){
+        return this.http.get(`${this.url}/bands/${bandId}/artists`)
+            .then(response => response.data);
+    }
 
-    // getAlbums(bandId)
+    getAlbums(bandId){
+        return this.http.get(`${this.url}/bands/${bandId}/albums`)
+            .then(response => response.data);
+    }
 
     // getAlbum(albumId)
 
-    // getTrack(trackId)
+    getTrack(trackId){
+        
+    }
 
     // getCommentsForTrack(trackId)
 

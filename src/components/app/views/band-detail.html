@@ -1,13 +1,40 @@
-<div class="band-detail-container">
+<div class="band-detail-container container">
     <h1>Band Details</h1>
     <h2>Artists</h2>
+    
     <!-- Show artists details here -->
-    <!-- <pre>{{$resolve.artists | json}}</pre> -->
+     <!-- <pre>{{$resolve.artists | json}}</pre> -->
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-3" ng-repeat="artist in $resolve.artists">
+    <div class="thumbnail">
+      <img ng-src="{{artist.url}}" style="max-width: 200px;">
+      <div class="caption">
+        <h3>{{artist.firstName + " " + artist.lastName}}</h3>
+        <p><strong>Instrument: </strong>{{artist.instrument}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <hr />
 
     <h2>Albums</h2>
     <!-- Show Albums details here -->
     <!-- <pre>{{$resolve.albums | json}}</pre> -->
+    <div class="row">
+  <div class="col-sm-6 col-md-3" ng-repeat="album in $resolve.albums" >
+    <div class="thumbnail">
+      <img ng-src="{{album.url}}" style="max-width: 200px;">
+      <div class="caption">
+        <h3 style="font-size: 18px;">{{album.name}}</h3>
+        <p><strong>Date: </strong>{{album.releaseDate}}</p>
+      </div>
+    </div>
+  </div>
+</div>
     <hr />
 
     <div class="tracks"
@@ -20,6 +47,6 @@
             <hr />
             <!-- Implement comments component -->
         </div>
-        <!-- <pre>{{$resolve.tracks | json}}</pre> -->
+         <pre>{{$resolve.tracks | json}}</pre> 
     </div>
 </div>
