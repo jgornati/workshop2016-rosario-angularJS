@@ -11,15 +11,16 @@ export function routes($routeProvider, $locationProvider) {
         .otherwise('/')
         .when('/', {
             templateUrl: '/components/app/views/index.html',
-            // resolve: {
-            //   data: //Implement API call to get bands
-            // },
+        resolve: {
+               data: ($route, ApiService) =>//Implement API call to get bands
+                ApiService.getBands(),
+             },
         })
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
               artists: ($route, ApiService) =>
-                  ApiService.getArtists($route.current.params.bandId),
+                  ApiService.getBand($route.current.params.bandId),
               // albums: //Implement API call to get albums
             },
         })
