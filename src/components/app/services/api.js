@@ -14,7 +14,10 @@ export class ApiService {
 
     // getArtists(bandId)
 
-    // getAlbums(bandId)
+     getAlbums(bandId){
+            return this.http.get(`${this.url}/bands/${this.bandId}/albums`)
+        .then(response => response.data);
+     }
 
     // getAlbum(albumId)
 

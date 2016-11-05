@@ -20,15 +20,16 @@ export function routes($routeProvider, $locationProvider) {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
               artists: ($route, ApiService) =>
-                  ApiService.getArtists($route.current.params.bandId),
+                  ApiService.getBand($route.current.params.bandId),
               // albums: //Implement API call to get albums
             },
         })
         .when('/band/:bandId/album/:albumId/', {
             templateUrl: '/components/app/views/band-detail.html',
-            // resolve: {
-            //   artists, albums and tracks requests in here
-            // },
+            resolve: {
+                data: ($route, ApiService) =>
+                  ApiService.getAlbmuns(),
+            },
         })
         .when('/band/:bandId/album/:albumId/track/:trackId/', {
             templateUrl: '/components/app/views/band-detail.html',
